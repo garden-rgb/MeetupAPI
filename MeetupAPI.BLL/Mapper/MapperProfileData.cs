@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 
 namespace MeetupAPI.BLL.Mapper
 {
-    public class MapperProfile : Profile
+    public class MapperProfileData : Profile
     {
-        public MapperProfile()
+        public MapperProfileData()
         {
             CreateMap<MeetupData, Meetup>();
-            CreateMap<IEnumerable<MeetupData>, Meetup>();
+            CreateMap<IEnumerable<MeetupData>, List<Meetup>>();
             CreateMap<Meetup, MeetupData>();
         }
     }

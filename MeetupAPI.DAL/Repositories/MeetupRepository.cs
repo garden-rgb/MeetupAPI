@@ -26,7 +26,7 @@ namespace MeetupAPI.DAL.Repositories
 
         public async Task<Meetup> GetByIdAsync(int id)
         {
-            return await _context.Meetups.FindAsync(id);
+            return await _context.Meetups.AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
         }
 
         public async Task CreateAsync(Meetup meetup)
@@ -43,7 +43,7 @@ namespace MeetupAPI.DAL.Repositories
 
         public void Edit(Meetup meetup)
         {
-            _context.Update(meetup);
+            _context.Meetups.Update(meetup);
         }
 
     }

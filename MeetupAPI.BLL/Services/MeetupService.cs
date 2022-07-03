@@ -38,6 +38,7 @@ namespace MeetupAPI.BLL.Services
 
             return meetupData;
         }
+
         public async Task EditMeetupAsync(MeetupData meetupData)
         {
             var meetup = _mapper.Map<Meetup>(meetupData);

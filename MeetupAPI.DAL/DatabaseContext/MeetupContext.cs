@@ -18,9 +18,9 @@ namespace MeetupAPI.DAL.DatabaseContext
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Meetup>().HasData(
-            new Meetup { Id = 1, Name = "Tom", Age = 37 },
-            new Meetup { Id = 2, Name = "Bob", Age = 41 },
-            new Meetup { Id = 3, Name = "Sam", Age = 24 }
+            new Meetup { Id = 1, Name = "FirstMeetup", Description = "First meetup today", Organizer = "Modsen", Speaker = "Tom Holland", PlaceOfEvent = "Minsk, Belarus", TimeOfEvent = DateTime.UtcNow },
+            new Meetup { Id = 2, Name = "SecondMeetup", Description = "Second meetup today", Organizer = "Modsen", Speaker = "James", PlaceOfEvent = "Warszawa, Poland", TimeOfEvent = DateTime.UtcNow },
+            new Meetup { Id = 3, Name = "Thirdeetup", Description = "Third meetup today", Organizer = "Modsen", Speaker = "Luke", PlaceOfEvent = "NY, USA", TimeOfEvent = DateTime.UtcNow }
             );
         }
 
