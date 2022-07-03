@@ -2,11 +2,13 @@
 using MeetupAPI.BLL.Interfaces;
 using MeetupAPI.BLL.Model;
 using MeetupAPI.Web.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MeetupAPI.Web.Controllers
 {
     [Route("api/[controller]")]
+    [Authorize]
     [ApiController]
     public class MeetupController : ControllerBase
     {
