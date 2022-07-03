@@ -52,7 +52,6 @@ builder.Services.AddSwaggerGen(options =>
     }
   });
 
-    options.EnableAnnotations();
 });
 
 builder.Services.AddIdentityServer().AddDeveloperSigningCredential()        
@@ -69,15 +68,6 @@ builder.Services.AddAuthentication("Bearer")
             ValidateAudience = false
         };
     });
-
-builder.Services.AddAuthorization(options =>
-{
-    options.AddPolicy("ApiScope", policy =>
-    {
-        policy.RequireAuthenticatedUser();
-        policy.RequireClaim("scope", "MeetupAPI");
-    });
-});
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IMeetupService, MeetupService>();
@@ -108,8 +98,4 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
-app.UseEndpoints(endpoints =>
-{
-    endpoints.MapControllers()
-        .RequireAuthorization("ApiScope");
-});
+

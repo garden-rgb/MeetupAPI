@@ -53,7 +53,6 @@ namespace MeetupAPI.Web.Controllers
             return Ok(meetup);
         }
 
-
         [HttpPost]
         public async Task<IActionResult> CreateMeetupAsync(Meetup meetup)
         {
@@ -63,7 +62,6 @@ namespace MeetupAPI.Web.Controllers
 
             return Ok(meetupData);
         }
-
 
         [HttpPut("{id}")]
         public async Task<IActionResult> EditMeetup(int id, Meetup meetup)
